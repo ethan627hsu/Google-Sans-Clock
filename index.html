@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<div id="screen"></div>
+<style>
+@font-face {
+  font-family: 'Google Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Google Sans Bold'), local('GoogleSans-     Bold'),
+  url(https://fonts.gstatic.com/s/googlesans/v13/4UabrENHsxJlGDuGo1OIlLV154tzCwY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+#screen {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24vw;
+    font-family: Google Sans;
+}
+</style>
+<script>
+     function update(){
+    var colors = ["#DB4437","#F4B400","#0F9D58","#4285F4"];
+    var currDate = new Date();
+    var currHour = currDate.getHours() === 0 ? 24 : currDate.getHours();
+    var currMinute = currDate.getMinutes();
+    var currSecond = currDate.getSeconds(); 
+    var session = "PM";
+    
+    if(currHour < 12){
+        session = "AM";
+    }
+    else{
+    currHour = currHour - 12;
+    }
+    
+    var fh = (currHour < 10) ? "0" + currHour : currHour;
+    var fm = (currMinute < 10) ? "0" + currMinute : currMinute;
+    var fs = (currSecond < 10) ? "0" + currSecond : currSecond;
+    
+    var time = fh + ":" + fm + ":" + fs + " " + session;
+    document.getElementById("screen").innerText = time;
+         
+    document.getElementById("screen").style.color = colors[currMinute%4];
+    document.body.style.backgroundColor = colors[(currMinute+1)%4];
+    
+    setTimeout(update, 1000);
+    
+}
+
+update();                                                           
+</script>
+</html>
