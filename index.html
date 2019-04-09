@@ -26,14 +26,10 @@
     var currMinute = currDate.getMinutes();
     var currSecond = currDate.getSeconds();
     var session = "PM";
-
-    if(currHour < 12){
+    if(currHour < 12 || currHour === 24){
         session = "AM";
     }
-    else if(currHour === 12){
-
-    }
-    else{
+    if(currHour > 12){
     currHour = currHour - 12;
     }
 
