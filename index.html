@@ -20,10 +20,10 @@
 </style>
 <script>
      function update(){
-    var colors = ["#DB4437","#F4B400","#0F9D58","#4285F4"];
+    colors = ["#DB4437","#F4B400","#F4B400","#0F9D58","#4285F4","#F4B400","#F4B400","#DB4437","#0F9D58","#F4B400","#F4B400","#4285F4"];
     var currDate = new Date();
     var currHour = currDate.getHours() === 0 ? 24 : currDate.getHours();
-    var currMinute = currDate.getMinutes();
+    var currMinute = currDate.getMinutes() + 6;
     var currSecond = currDate.getSeconds();
     var session = "PM";
     if(currHour < 12 || currHour === 24){
@@ -39,9 +39,9 @@
 
     var time = fh + ":" + fm + ":" + fs + " " + session;
     document.getElementById("screen").innerText = time;
-
-    document.getElementById("screen").style.color = colors[currMinute%4];
-    document.body.style.backgroundColor = colors[(currMinute+1)%4];
+    var calc = currMinute%(colors.length/2)*2
+    document.getElementById("screen").style.color = colors[calc];
+    document.body.style.backgroundColor = colors[calc + 1];
 
     setTimeout(update, 1000);
 
