@@ -23,7 +23,7 @@
     var colors = ["#DB4437","#F4B400","#F4B400","#0F9D58","#4285F4","#F4B400","#F4B400","#DB4437","#0F9D58","#F4B400","#F4B400","#4285F4"];
     var currDate = new Date();
     var currHour = currDate.getHours() === 0 ? 24 : currDate.getHours();
-    var currMinute = currDate.getMinutes() + 6;
+    var currMinute = currDate.getMinutes();
     var currSecond = currDate.getSeconds();
     var session = "PM";
     if(currHour < 12 || currHour === 24){
