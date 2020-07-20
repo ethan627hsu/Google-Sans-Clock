@@ -1,6 +1,6 @@
 # Google-Sans-Clock
 > ##### A simple, yet useful full screen JavaScript clock
-**To try out the clock just the way it is, you can use the [repo's GitHub Pages site](https://ethan627hsu.github.io/Google-Sans-Clock)**
+**To try out the clock just the way it is, you can use the [repo's GitHub Pages site](https://ethanhsuhsu.github.io/Google-Sans-Clock)**
 > The clock is built using a combination of basic HTML, CSS and Javascript code. Since the source is small enough, all of the clock's contents are stored in a [index.html](index.html) file.
 
 
